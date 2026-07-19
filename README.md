@@ -4,9 +4,14 @@
 
 One-click conversion from yellow normal maps to standard tangent-space normal maps.
 
-## Screenshot / 截图
+## Example / 效果示例
 
-![screenshot](screenshot.png)
+| Before / 转换前 | After / 转换后 |
+|---|---|
+| ![yellow normal map](example_before.png) | ![standard normal map](example_after.png) |
+
+Yellow normal map → Standard tangent-space normal map  
+黄色法线贴图 → 标准切线空间法线贴图
 
 ## Download / 下载
 
