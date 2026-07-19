@@ -1,70 +1,107 @@
 # Normal Map Converter / 法线贴图转换器
 
-一键将黄色法线贴图转换为标准法线贴图。
+---
+
+**[English](#english)** | **[中文](#中文)**
+
+---
+
+## English
 
 One-click conversion from yellow normal maps to standard tangent-space normal maps.
 
-## Example / 效果示例
+### Example
 
-| Before / 转换前 | After / 转换后 |
+| Before | After |
 |---|---|
 | ![yellow normal map](example_before.png) | ![standard normal map](example_after.png) |
 
-Yellow normal map → Standard tangent-space normal map  
-黄色法线贴图 → 标准切线空间法线贴图
-
-## Download / 下载
+### Download
 
 Go to [Releases](../../releases) and download `NormalMapConverter.exe` (72 MB, portable, no install needed).
 
-去 [Releases](../../releases) 下载 `NormalMapConverter.exe`（72MB，便携版，无需安装）。
+### Single Mode
 
-## How to Use / 使用方法
-
-### Single Mode / 单张转换
 1. Click **Browse...** and select a yellow normal map
 2. Preview the original and converted result
 3. Click **Convert & Save** to save as PNG
 
-1. 点 **浏览...** 选一张黄色法线贴图
-2. 左右预览原图和转换结果
-3. 点 **转换并保存** 存为 PNG
+### Batch Mode
 
-### Batch Mode / 批量转换
 1. Click **Add Images** or **Add Folder** to add files
 2. Set output directory
 3. Click **Batch Convert**
 
-1. 点 **添加图片** 或 **添加文件夹** 添加文件
-2. 设置输出目录
-3. 点 **批量转换**
-
-## Conversion Algorithm / 转换算法
+### Conversion Algorithm
 
 | Channel | Operation |
 |---------|-----------|
-| Red / 红 | Color invert (255 - value) / 反色 |
-| Green / 绿 | Unchanged / 不变 |
-| Blue / 蓝 | Fill white (255) / 填充白色 |
+| Red     | Color invert (255 - value) |
+| Green   | Unchanged |
+| Blue    | Fill white (255) |
 
-## Build from Source / 从源码构建
+### Build from Source
 
 ```bash
 npm install
 npm run build
 ```
 
-Output: `dist/NormalMapConverter.exe`
+Output: `dist/NormalMapConverter.exe` | Requires: Node.js 18+
 
-Requires: Node.js 18+
+### Tech Stack
 
-## Tech Stack / 技术栈
+Electron 28 / HTML / CSS / JavaScript / CSS `backdrop-filter` / Canvas API
 
-- Electron 28
-- HTML / CSS / JavaScript
-- CSS `backdrop-filter` for frosted glass effect
-- Canvas API for image processing
+---
 
-## License
+## 中文
+
+一键将黄色法线贴图转换为标准切线空间法线贴图。
+
+### 效果示例
+
+| 转换前 | 转换后 |
+|---|---|
+| ![黄色法线贴图](example_before.png) | ![标准法线贴图](example_after.png) |
+
+### 下载
+
+去 [Releases](../../releases) 下载 `NormalMapConverter.exe`（72MB，便携版，无需安装）。
+
+### 单张转换
+
+1. 点 **浏览...** 选一张黄色法线贴图
+2. 左右预览原图和转换结果
+3. 点 **转换并保存** 存为 PNG
+
+### 批量转换
+
+1. 点 **添加图片** 或 **添加文件夹** 添加文件
+2. 设置输出目录
+3. 点 **批量转换**
+
+### 转换算法
+
+| 通道 | 操作 |
+|------|------|
+| 红   | 反色（255 - 值） |
+| 绿   | 不变 |
+| 蓝   | 填充白色（255） |
+
+### 从源码构建
+
+```bash
+npm install
+npm run build
+```
+
+输出：`dist/NormalMapConverter.exe` | 需要：Node.js 18+
+
+### 技术栈
+
+Electron 28 / HTML / CSS / JavaScript / CSS `backdrop-filter` / Canvas API
+
+---
 
 MIT
