@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Normal Map Converter</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="app">
+  <!-- Title Bar -->
+  <div id="titlebar">
+    <span id="title" data-i18n="title">Normal Map Converter</span>
+    <div id="title-btns">
+      <button id="btn-min" title="Minimize">&mdash;</button>
+      <button id="btn-max" title="Maximize">&#x29C9;</button>
+      <button id="btn-close" title="Close">&times;</button>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div id="tabs">
+    <button class="tab active" data-tab="single" data-i18n="tabSingle">Single</button>
+    <button class="tab" data-tab="batch" data-i18n="tabBatch">Batch</button>
+  </div>
+
+  <!-- SINGLE MODE -->
+  <div id="panel-single" class="panel active">
+    <div class="glass-card" id="file-row">
+      <input type="text" id="single-path" readonly data-i18n-placeholder="placeholderSingle" />
+      <button id="btn-browse-single" class="btn" data-i18n="browse">Browse...</button>
+    </div>
+    <div class="glass-card" id="preview-row">
+      <div class="preview-box">
+        <div class="preview-label" data-i18n="original">Original</div>
+        <div class="preview-img"><canvas id="canvas-original"></canvas></div>
+      </div>
+      <div class="arrow">&gt;</div>
+      <div class="preview-box">
+        <div class="preview-label" data-i18n="converted">Converted</div>
+        <div class="preview-img"><canvas id="canvas-converted"></canvas></div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:10px;">
+      <button id="btn-convert-single" class="btn-accent" data-i18n="convertSave">Convert &amp; Save</button>
+      <button id="btn-lang" class="btn-lang-round" data-i18n-title="lang" title="中文/EN">中/EN</button>
+    </div>
+  </div>
+
+  <!-- BATCH MODE -->
+  <div id="panel-batch" class="panel">
+    <div class="glass-card" id="batch-actions">
+      <button id="btn-add-files" class="btn" data-i18n="addImages">Add Images</button>
+      <button id="btn-add-folder" class="btn" data-i18n="addFolder">Add Folder</button>
+      <button id="btn-clear" class="btn" data-i18n="clear">Clear</button>
+    </div>
+    <div class="glass-card" id="batch-list-card">
+      <table id="batch-list">
+        <thead><tr>
+          <th data-i18n="colIndex">#</th>
+          <th data-i18n="colFilename">Filename</th>
+          <th data-i18n="colSize">Size</th>
+          <th data-i18n="colStatus">Status</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="glass-card" id="batch-output-row">
+      <span data-i18n="output">Output:</span>
+      <input type="text" id="batch-output-dir" value="./converted" />
+      <button id="btn-browse-output" class="btn" data-i18n="browse">Browse...</button>
+    </div>
+    <div class="glass-card" id="batch-progress-row">
+      <div id="progress-bar"><div id="progress-fill"></div></div>
+      <span id="progress-text" data-i18n="ready">Ready</span>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:10px;">
+      <button id="btn-batch-convert" class="btn-accent" data-i18n="batchConvert">Batch Convert</button>
+      <button id="btn-lang2" class="btn-lang-round" data-i18n-title="lang" title="中文/EN">中/EN</button>
+    </div>
+  </div>
+
+  <div id="statusbar" data-i18n="ready">Ready</div>
+</div>
+
+<script src="renderer.js"></script>
+</body>
+</html>

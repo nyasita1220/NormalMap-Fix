@@ -1,0 +1,37 @@
+{
+  "name": "normalmap-fix",
+  "version": "1.0.0",
+  "description": "Normal Map Converter",
+  "main": "main.js",
+  "scripts": {
+    "start": "set ELECTRON_RUN_AS_NODE= && electron .",
+    "build": "set ELECTRON_RUN_AS_NODE= && electron-builder --win portable"
+  },
+  "build": {
+    "appId": "com.normalmapfix.app",
+    "productName": "NormalMapConverter",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "styles.css",
+      "renderer.js",
+      "bg.jpg",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": "portable",
+      "icon": "icon.ico"
+    },
+    "portable": {
+      "artifactName": "NormalMapConverter.exe"
+    }
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^26.15.3"
+  }
+}
